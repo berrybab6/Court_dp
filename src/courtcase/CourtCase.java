@@ -93,22 +93,17 @@ public class CourtCase {
                     break;
                 case 2:
                     //Creating admin
-                    
-        InputStream fsIP;
-        HSSFWorkbook workBook;
-        Cell cell = null;
-        
-        try {
-                    
-            fsIP = new FileInputStream("Court.xls");
-     
-            workBook = new HSSFWorkbook(fsIP);   
-            cell = workBook.getSheetAt(1).getRow(1).getCell(1);
-            //System.out.println("the id : " + cell.getStringCellValue());
-            
-        } catch (Exception ex) {
-            System.out.println("Admin Checking error --> " + ex.getMessage());
-        }
+                    InputStream fsIP;
+                    HSSFWorkbook workBook;
+                    Cell cell = null;
+                    try {
+                        fsIP = new FileInputStream("Court.xls");
+                        workBook = new HSSFWorkbook(fsIP);
+                        cell = workBook.getSheetAt(1).getRow(1).getCell(1);
+                        //System.out.println("the id : " + cell.getStringCellValue());
+                    } catch (Exception ex) {
+                        System.out.println("Admin Checking error --> " + ex.getMessage());
+                    }
                     
                     if(cell==null){
                         Admin ad = new Admin();
@@ -162,8 +157,6 @@ public class CourtCase {
                                         
                         
                     }   break;
-                case 3:
-                    break;
                     
                 default:
                     break;
